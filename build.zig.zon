@@ -1,0 +1,11 @@
+.{
+    .name = "zelu",
+    .version = "0.0.0",
+
+    .dependencies = .{
+        .zauto = .{
+            .url = "https://github.com/hmusgrave/zauto/archive/refs/tags/0.0.0.tar.gz",
+            .hash = "122032ce63f83b093452dac8487bff9f26e2f9f2f14f6f69e81bad1c41343bec5fdd",
+        },
+    },
+}
