@@ -42,6 +42,7 @@ inline fn elu_pdf(comptime F: type, x: Dual(F), mu: Dual(F), sigma: Dual(F)) Dua
 }
 
 inline fn elu_mean_rk4(comptime F: type, mu: Dual(F), sigma: Dual(F), upper: F, h: F) Dual(F) {
+    // runge kutta 4 numeric integration of the mean of elu with a N(0,1) input
     fail_non_float(F);
     var x = Dual(F).init_with_const(-1.0);
     const step = Dual(F).init_with_const(h);
@@ -59,6 +60,7 @@ inline fn elu_mean_rk4(comptime F: type, mu: Dual(F), sigma: Dual(F), upper: F, 
 }
 
 inline fn elu_var_rk4(comptime F: type, mu: Dual(F), sigma: Dual(F), upper: F, h: F, mean: Dual(F)) Dual(F) {
+    // runge kutta 4 numeric integration of the variance of elu with a N(0,1) input
     fail_non_float(F);
     var x = Dual(F).init_with_const(-1.0);
     const step = Dual(F).init_with_const(h);
