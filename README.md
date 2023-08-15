@@ -54,8 +54,11 @@ const whitened = elu_whiten(f16, 2, 3, .{
 ```
 
 ```zig
-const activation = elu(f64, 3, .{0, 3.14, 2.72});
-const gradient = elu_grad(f64, 3, .{0, 3.14, 2.72});
+// .{-0.4566491309255002, 3.14, 2.72}
+const activation = elu(f64, 3, .{-0.61, 3.14, 2.72});
+
+// .{0.5433508690744998, 1, 1}
+const gradient = elu_grad(f64, 3, .{-0.61, 3.14, 2.72});
 ```
 
 ## Status
